@@ -1,1 +1,0 @@
-SELECT * FROM SALESMAN ORDER BY salesman_id;
