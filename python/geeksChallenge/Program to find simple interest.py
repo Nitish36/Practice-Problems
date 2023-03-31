@@ -14,3 +14,7 @@ time = float(input())
 
 s_interest = interest(principal,time,rate)
 print("The simple interest for principal {}, time {} ,rate {} is {}".format(principal,time,rate,s_interest))
+
+print("The updated amount is as follows: ")
+A = principal + interest(principal,time,rate)
+print(A)
