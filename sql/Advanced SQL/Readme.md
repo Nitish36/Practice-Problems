@@ -1,2 +1,1 @@
-
-# SQL Questions: https://www.windowfunctions.com/
+SQL Questions: https://www.windowfunctions.com/
