@@ -1,0 +1,8 @@
+/*
+1. For data safety, only SELECT statements are allowed
+2. Results have been capped at 200 rows
+*/
+SELECT EXTRACT(YEAR FROM payment_ts) as year,EXTRACT(MONTH FROM payment_ts) as mon,SUM(amount) as rev
+FROM payment
+GROUP BY year,mon
+ORDER BY year,mon;
