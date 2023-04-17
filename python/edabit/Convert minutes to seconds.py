@@ -1,4 +1,3 @@
-function convert(minutes) {
+def convert(minutes):
 	seconds = minutes*60
 	return seconds
-}
