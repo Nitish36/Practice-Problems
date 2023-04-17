@@ -1,3 +1,2 @@
-function getFirstValue(arr) {
+ def getFirstValue(arr):
 	return arr[0]
-}
