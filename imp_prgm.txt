@@ -29,3 +29,16 @@ print(List)
 #reverse each string in a tuple
 rev = [str[::-1] for str in ("geeks","for","geeks")]
 print(rev)
+
+#sum of digits which are odd
+def digisum(num):
+    sum = 0
+    while(num!=0):
+        rem = num%10
+        sum = sum + rem
+        num = num//10
+    return sum
+
+l = [367, 111, 562, 945, 6726, 873]
+res = [digisum(i) for i in l if i%2!=0]
+print(res)
