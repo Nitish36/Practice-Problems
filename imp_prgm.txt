@@ -42,3 +42,34 @@ def digisum(num):
 l = [367, 111, 562, 945, 6726, 873]
 res = [digisum(i) for i in l if i%2!=0]
 print(res)
+-----------------------------------------------------------------------------------------------------------------------------------------------
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+        self.__pvt = "Private Member"
+        self._protec = "Protected Member"
+    
+    def disp(self):
+        print("Name: ",self.name)
+        print("Age: ",self.age)
+        print("Pr: ",self.__pvt)
+        print("Protected: ",self._protec)
+
+class Student(Person):
+    def about(self,color,marks,status):
+        self.color = color
+        self.marks = marks
+        self.status = status
+    
+    def disp1(self):
+        print("Color: ",self.color)
+        print("Marks: ",self.marks)
+        print("Status: ", self.status)
+        print("Protected: ",self._protec)
+
+
+std = Student("ABC",40)
+std.about("black",90,"student clearance")
+std.disp()
+std.disp1()
