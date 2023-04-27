@@ -73,3 +73,57 @@ std = Student("ABC",40)
 std.about("black",90,"student clearance")
 std.disp()
 std.disp1()
+-------------------------------------------------------------------
+#Create a class called Student with attributes name, age, and grade. Write methods to update the student's
+#grade and to print the student's information.
+class Student:
+    def __init__(self,name,age,grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+    
+    def getDetails(self):
+        print("Name: ",self.name)
+        print("Age ",self.age)
+        print("Grade ",self.grade)
+    
+    def setName(self,name):
+        self.name = name
+    
+    def setage(self,age):
+        self.age = age
+    def setgrade(self,grade):
+        self.grade = grade
+ch = 0
+print("Enter a name")
+name = input()
+print("Enter a age")
+age = input()
+print("Enter a grade")
+grade = input()
+s = Student(name,age,grade)
+s.getDetails()
+while(True):
+    print("1 to update name")
+    print("2 to update age")
+    print("3 to update grade")
+    print("4 to display")
+    print("5 to exit")
+    
+    ch = int(input())
+    if ch == 1:
+        print("Enter name")
+        name = input()
+        s.setName(name)
+    if ch == 2:
+        print("Enter age")
+        age = int(input())
+        s.setage(age)
+    if ch == 3:
+        print("Enter grade")
+        grade = input()
+        s.setgrade(grade)
+    if ch == 4:
+        s.getDetails()
+    if ch == 5:
+        exit(0)
