@@ -1,0 +1,25 @@
+WITH apple_products AS
+(
+    SELECT pu.language as language,COUNT(DISTINCT
+    CASE WHEN pe.device IN ('macbook pro','iphone 5s','ipad air')
+    THEN  pe.user_id  END) as count_of_apple
+    FROM playbook_events pe
+    INNER JOIN playbook_users pu
+    on pe.user_id = pu.user_id
+    GROUP BY language
+    ORDER BY count_of_apple DESC
+)
+,all_products AS
+(
+    SELECT pu.language as language,COUNT(DISTINCT pe.user_id) as count_of_devices
+    FROM playbook_events pe
+    INNER JOIN playbook_users pu
+    on pe.user_id = pu.user_id
+    GROUP BY language
+    ORDER BY count_of_devices DESC
+)
+SELECT alp.language,count_of_apple as n_apple_users,count_of_devices as n_total_users
+FROM apple_products ap
+LEFT JOIN all_products alp
+ON ap.language = alp.language
+ORDER BY n_total_users DESC
