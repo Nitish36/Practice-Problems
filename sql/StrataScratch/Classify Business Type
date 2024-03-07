@@ -1,0 +1,8 @@
+SELECT DISTINCT business_name,
+    CASE 
+        WHEN business_name LIKE "%School%" THEN "school"
+        WHEN business_name LIKE "%Restaurant%" THEN "restaurant"
+        WHEN business_name LIKE "%cafe%" OR business_name LIKE "%coffee%" OR business_name LIKE "%café%" OR business_name LIKE "%Coffee%" THEN "cafe"
+        ELSE "other"
+    END AS business_type
+FROM sf_restaurant_health_violations;
